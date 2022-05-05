@@ -1,16 +1,16 @@
 def productExceptSelf(nums):
-    prefix = 1
-    postfix = 1
-    result = [1] * (len(nums))
+    temp = 1
+
+    output = [1] * len(nums)
 
     for i in range(len(nums)):
-        result[i] = prefix
-        prefix *= nums[i]
+        output[i] = temp
+        temp *= nums[i]
+    l = len(output)-1
 
-    numLen = len(nums) - 1
-    while numLen >= 0:
-        result[numLen] *= postfix
-        postfix *= nums[numLen]
-        numLen -= 1
-
-    return result
+    temp = 1
+    while l >= 0:
+        output[l] *= temp
+        temp *= nums[l]
+        l -= 1
+    return output
