@@ -3,3 +3,4 @@
 - bellman-ford
 - unix-diff
 - prefix-sum
+- kadane algorithm
