@@ -11,7 +11,6 @@ def twoSum(nums, target):
         return [0, 1]
 
     nums.sort()
-    print(nums)
 
     start = 0
     end = len(nums) - 1
