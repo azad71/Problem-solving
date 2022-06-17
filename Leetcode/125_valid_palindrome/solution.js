@@ -1,21 +1,24 @@
 function isPalindrome(s) {
-  let n = [];
-  for (let i = 0; i < s.length; i++) {
-    let value = s[i].charCodeAt();
-    if ((value >= 47 && value <= 57) || (value >= 97 && value <= 122)) {
-      n.push(s[i]);
-    } else if (value >= 65 && value <= 90) {
-      n.push(s[i].toLowerCase());
-    }
-  }
-
   let start = 0;
-  let end = n.length - 1;
+  let end = s.length - 1;
+
+  const isAlphaNum = (c) => (c >= 47 && c <= 57) || (c >= 97 && c <= 122) || (c >= 65 && c <= 90);
 
   while (start < end) {
-    if (n[start] !== n[end]) {
+    if (!isAlphaNum(s[start].charCodeAt())) {
+      start++;
+      continue;
+    }
+
+    if (!isAlphaNum(s[end].charCodeAt())) {
+      end--;
+      continue;
+    }
+
+    if (s[start].toLowerCase() !== s[end].toLowerCase()) {
       return false;
     }
+
     start++;
     end--;
   }
@@ -23,8 +26,8 @@ function isPalindrome(s) {
   return true;
 }
 
-// console.log(isPalindrome("A man, a plan, a canal: Panama"));
-// console.log(isPalindrome("A man, a plan"));
-// console.log(isPalindrome(" "));
-// console.log(isPalindrome("race a car"));
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("A man, a plan"));
+console.log(isPalindrome(" "));
+console.log(isPalindrome("race a car"));
 console.log(isPalindrome("001}10)"));
