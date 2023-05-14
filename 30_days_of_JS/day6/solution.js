@@ -1,3 +1,5 @@
+// editorial: https://leetcode.com/problems/array-reduce-transformation/editorial/
+
 function reduce(nums, fn, init) {
   if (!nums.length) return init;
 

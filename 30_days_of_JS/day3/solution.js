@@ -1,3 +1,5 @@
+// editorial: https://leetcode.com/problems/counter-ii/editorial/
+
 function createCounter(init) {
   let n = init;
   return {

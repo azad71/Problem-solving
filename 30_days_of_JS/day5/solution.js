@@ -1,3 +1,5 @@
+// editorial: https://leetcode.com/problems/filter-elements-from-array/editorial/
+
 function filter(arr, fn) {
   const newArr = new Array(arr.length);
   let loc = 0;
