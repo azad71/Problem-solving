@@ -3,3 +3,4 @@ Topics
 *.out
 .DS_Store
 Playground
+go.mod
